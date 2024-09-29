@@ -1,0 +1,351 @@
+/* GENERAL */
+html {
+	width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-weight: 400;
+	font-size: 13px;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	background: black;
+	scroll-behavior: smooth;
+}
+
+* {
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+p {
+	font-size: 11px;
+	line-height: 24px;
+	padding-bottom: 10px;
+	font-weight: 500;
+	color: #878C9F;
+	font-family: 'Poppins', sans-serif;
+}
+a {
+	text-decoration:none; 
+	position:relative; 
+	color:#000;
+}
+
+/* LANDING SECTION */
+.main-container {
+	font-family: 'Titillium Web', sans-serif;
+	margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.background_image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+.neon {
+    position: relative;
+    overflow: hidden;
+    filter: brightness(200%);
+}
+.text {
+    background-color: black;
+    color: white;
+    font-size: 110px;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.text::before {
+    content: attr(data-text);
+    position: absolute;
+    filter: blur(0.02em);
+    mix-blend-mode: difference; 
+}
+.gradient {
+    position: absolute;
+    background: linear-gradient(45deg, maroon, red, gold, lightgreen, green, lightgreen, gold, red, maroon);
+    inset: 0;
+    mix-blend-mode: multiply;
+}
+.spotlight {
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(
+            circle,
+            white,
+            transparent 25%
+        ) center / 25% 25%,
+        radial-gradient(
+            circle,
+            white,
+            black 25%
+        ) center / 12.5% 12.5%;
+    animation: light 5s linear infinite;
+    mix-blend-mode: color-dodge;
+}
+
+@keyframes light {
+    to {
+        transform: translate(50%, 50%);
+    }
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 682px) {
+	.text {
+		font-size: 99px;
+	}
+}
+@media screen and (max-width: 616px) {
+	.text {
+		font-size: 89px;
+	}
+}
+@media screen and (max-width: 592px) {
+	.text {
+		font-size: 79px;
+	}
+}
+@media screen and (max-width: 592px) {
+	.text {
+		font-size: 69px;
+	}
+}
+@media screen and (max-width: 434px) {
+	.text {
+		font-size: 59px;
+	}
+}
+@media screen and (max-width: 375px) {
+	.text {
+		font-size: 49px;
+	}
+}
+@media screen and (max-width: 315px) {
+	.text {
+		font-size: 39px;
+	}
+}
+@media screen and (max-width: 254px) {
+	.text {
+		font-size: 29px;
+	}
+}
+@media screen and (max-width: 175px) {
+	.text {
+		font-size: 19px;
+	}
+}
+
+/* SCROLL DOWN */
+
+.scroll_down
+{
+	position: absolute;
+	left: 95%;
+	transform: translateX(-50%);
+	bottom: 3%;
+	z-index: 99;
+}
+.scroll_icon {
+	cursor: pointer;
+	position: relative;
+	width: 24px;
+	height: 24px;
+} 
+.chevron {
+	position: absolute;
+	width: 38px;
+	height: 8px;
+	bottom: 5%;
+	opacity: 0;
+	transform: scale3d(0.5, 0.5, 0.5);
+	animation: move 3s ease-out infinite;
+}
+.chevron:first-child {
+	animation: move 3s ease-out 1s infinite;
+}
+.chevron:nth-child(2) {
+	animation: move 3s ease-out 2s infinite;
+}
+.chevron:before,
+.chevron:after {
+	content: ' ';
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 51%;
+	background: linear-gradient(45deg, maroon, red, maroon);;
+	background: rgb(143, 0, 0);
+}
+.chevron:before {
+	left: 0;
+	transform: skew(0deg, 30deg);
+}
+.chevron:after {
+	right: 0;
+	width: 50%;
+	transform: skew(0deg, -30deg);
+}  
+@keyframes move {
+	25% {
+	  opacity: 1;
+  
+	}
+	33% {
+	  opacity: 1;
+	  transform: translateY(30px);
+	}
+	67% {
+	  opacity: 1;
+	  transform: translateY(40px);
+	}
+	100% {
+	  opacity: 0;
+	  transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+	}
+}
+
+.scroll_text {
+	cursor: pointer;
+	display: block;
+	margin-top: 60px;
+	margin-left: -30px;
+	font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+	font-size: 12px;
+	color: red;
+	text-transform: uppercase;
+	white-space: nowrap;
+	opacity: .25;
+	animation: pulse 2s linear alternate infinite;
+} 
+
+@keyframes pulse {
+	to {
+	  opacity: 1;
+	}
+}
+/* GAMES SECTION */
+/* Container Styling */
+#main {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+    gap: 20px; /* Space between grid items */
+    padding: 20px;
+    background: black; /* Background color */
+    justify-items: center; /* Center grid items horizontally */
+}
+
+@media screen and (max-width: 1500px) {
+	#main {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media screen and (max-width: 950px) {
+	#main {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+.grid_element {
+    position: relative;
+    width: 450px; /* Set a fixed width */
+    height: 300px; /* Set a fixed height */
+    background: #333; /* Box background color */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+}
+
+@media screen and (max-width: 650px) {
+	.grid_element {
+		width: 90vw;
+		height: auto;
+	}
+}
+
+.grid_element:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Image Styling */
+.grid_element img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire box */
+    /* border-radius: 10px; */
+}
+
+/* Game Info Styling */
+.game-info {
+    position: absolute;
+    bottom: -100%; /* Start off-screen */
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    transition: bottom 0.4s ease; /* Smooth transition for sliding effect */
+    padding: 10px; /* Padding for content */
+    text-align: center; /* Center the text */
+    border-radius: 10px; /* Match the box's border radius */
+    opacity: 0; /* Initially hidden */
+}
+
+/* Title Styling */
+.game-title {
+    color: #fff;
+    margin: 0; /* Remove default margin */
+    font-size: 20px; /* Set font size for title */
+}
+
+/* Description Styling */
+.game-description {
+    color: #fff;
+    margin: 5px 0 0; /* Top margin only for spacing */
+    font-size: 14px; /* Font size for description */
+}
+
+/* Play Button Styling */
+.play-button {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    color: black; /* Button color */
+    font-size: 40px; /* Increase button size if needed */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+/* Hover effects */
+.grid_element:hover .play-button {
+    opacity: 1; /* Show play button on hover */
+}
+
+
+/* Hover effects */
+.grid_element:hover .game-info {
+    bottom: 0; /* Slide in from the bottom */
+    opacity: 1; /* Show game info on hover */
+}
+
